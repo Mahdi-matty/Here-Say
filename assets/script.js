@@ -1,3 +1,5 @@
+let getLat;
+let getLang;
 var map;
     function initialize() {
     var myLatlng = new google.maps.LatLng(40.713956,-74.006653);
@@ -22,17 +24,18 @@ var map;
 });
 
 google.maps.event.addListener(marker, 'click', function (event) {
-    let getLat = this.getPosition().lat();
-    let getLang = this.getPosition() .lng();
-    localStorage.setItem("getLat", getLat);
-    localStorage.setItem("getLang", getLang);
+    getLat = this.getPosition().lat();
+    getLang = this.getPosition() .lng();
+    // localStorage.setItem("getLat", getLat);
+    // localStorage.setItem("getLang", getLang);
     document.getElementById("latbox").value = this.getPosition().lat();
     document.getElementById("lngbox").value = this.getPosition().lng();
     localStorage.setItem("longit", document.getElementById("lngbox").value)
-    locationFind.setItem("latitude");
+    // locationFind.setItem("latitude");
+    return reverseGeo();
     
 });
- reverseGeo();
+//  reverseGeo();
   
   }
   let cityLocal;
@@ -40,9 +43,9 @@ google.maps.event.addListener(marker, 'click', function (event) {
   
   
   function reverseGeo() {
-    var cityLat =localStorage.getItem("getLat");
-    var cityLon = localStorage.getItem("getLang");
-     fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${cityLat}&lon=${cityLon}&limit=5&appid=26f0afb86e9cf6226ab49ee5e767a358`)
+    // var cityLat =localStorage.getItem("getLat");
+    // var cityLon = localStorage.getItem("getLang");
+     fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${getLat}&lon=${getLang}&limit=5&appid=26f0afb86e9cf6226ab49ee5e767a358`)
     .then(function (response){
         return response.json();
     }).then (function (data){
@@ -133,13 +136,13 @@ document.querySelectorAll("section").forEach(section => {
 });
 
 
-function exchange() {
-    fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
-    .then(function(response){
-        return response.json();
-    }).then(function(data){
-        console.log(data);
-        document.querySelector("#ninthCrap").textContent= data[0].exTar;
-    })
-}
-exchange();
+// function exchange() {
+//     fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
+//     .then(function(response){
+//         return response.json();
+//     }).then(function(data){
+//         console.log(data);
+//         document.querySelector("#ninthCrap").textContent= data[0].exTar;
+//     })
+// }
+// exchange();
