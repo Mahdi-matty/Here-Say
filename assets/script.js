@@ -1,8 +1,37 @@
 let getLat;
 let getLang;
 var map;
-    function initialize() {
-    var myLatlng = new google.maps.LatLng(40.713956,-74.006653);
+let Lat;
+let Lng;
+async function initMap() {
+    try {
+        const location = await getLocation();
+        initialize(location.Lat, location.Lng);
+    } catch (error) {
+        console.error("Error getting location:", error);
+        initialize(40.713955826286025, -74.00390625);  // Defaults to New York City if there's an error
+    }
+}
+async function getLocation() {
+    const url = 'https://ip-geo-location4.p.rapidapi.com/?format=json';
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '649763c47bmsh14b40453fb9ebccp1e4669jsn5c184d8b6f20',
+        'X-RapidAPI-Host': 'ip-geo-location4.p.rapidapi.com'
+    }
+};
+    const response = await fetch(url, options);
+    const result = await response.text();
+    const obj = JSON.parse(result);
+    Lat = obj.location.latitude;
+    Lng = obj.location.longitude;
+  
+  return { Lat, Lng };
+
+}
+    function initialize(latitude, longitude) {
+    var myLatlng = new google.maps.LatLng(latitude,longitude);
   
     var myOptions = {
        zoom: 8,
