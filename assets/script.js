@@ -79,6 +79,7 @@ google.maps.event.addListener(marker, 'click', function (event) {
         document.querySelector("#fifthCrap").textContent=data[0].capital;
         document.querySelector("#sixthCrap").textContent=data[0].population;
         exTar = data[0].currencies[0].code;
+        exchange();
         document.querySelector("#seventhCrap").textContent=data[0].currencies[0].code;
         targetLan = textContent=data[0].languages[0].iso639_1;
         document.querySelector("#eighthCrap").textContent=data[0].languages[0].iso639_1;
@@ -136,13 +137,12 @@ document.querySelectorAll("section").forEach(section => {
 });
 
 
-// function exchange() {
-//     fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
-//     .then(function(response){
-//         return response.json();
-//     }).then(function(data){
-//         console.log(data);
-//         document.querySelector("#ninthCrap").textContent= data[0].exTar;
-//     })
-// }
-// exchange();
+function exchange() {
+    fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
+    .then(function(response){
+        return response.json();
+    }).then(function(data){
+        console.log(data.data);
+        document.querySelector("#ninthCrap").textContent= data.data[exTar];
+    })
+}
