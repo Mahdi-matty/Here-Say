@@ -141,11 +141,9 @@ const translateParagraphs = async () => {
       if (result.data.translations.length > 0) {
         const translatedText = result.data.translations[0].translatedText;
 
-        const pTarget = document.createElement("p");
+        const pTarget = document.querySelector("#translatedPop")
         pTarget.textContent = translatedText;
-
-        const translationContainer = document.querySelector("#translationContainer");
-        translationContainer.appendChild(pTarget);
+       
     } else {
         console.warn("No translation found.");
     }
