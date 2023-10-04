@@ -74,7 +74,7 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
   function reverseGeo() {
     // var cityLat =localStorage.getItem("getLat");
     // var cityLon = localStorage.getItem("getLang");
-     fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${getLat}&lon=${getLang}&limit=5&appid=26f0afb86e9cf6226ab49ee5e767a358`)
+     fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${getLat}&lon=${getLang}&limit=5&appid=26f0afb86e9cf6226ab49ee5e767a358`)
     .then(function (response){
         return response.json();
     }).then (function (data){
