@@ -59,12 +59,12 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
     // localStorage.setItem("getLang", getLang);
     document.getElementById("latbox").value = this.getPosition().lat();
     document.getElementById("lngbox").value = this.getPosition().lng();
-    localStorage.setItem("longit", document.getElementById("lngbox").value)
+    //localStorage.setItem("longit", document.getElementById("lngbox").value)
     // locationFind.setItem("latitude");
     return reverseGeo();
     
 });
-//  reverseGeo();
+
   
   }
   let cityLocal;
@@ -164,7 +164,7 @@ document.querySelectorAll("section").forEach(section => {
 });
 
 
-function exchange() {
+async function exchange() {
     fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
     .then(function(response){
         return response.json();
@@ -173,3 +173,25 @@ function exchange() {
         document.querySelector("#ninthCrap").textContent= data.data[exTar];
     })
 }
+
+
+async function queryInitialMarkerLocation() {
+    let location;
+    try {
+        location = await getLocation();
+    } catch (error) {
+        console.error("Error getting location:", error);
+        // Defaults to New York City if there's an error
+        location = { Lat: 40.713955826286025, Lng: -74.00390625 };
+    }
+    
+  
+    const myLatlng = new google.maps.LatLng(location.Lat, location.Lng);
+    
+    getLat = myLatlng.lat();
+    getLang = myLatlng.lng();
+    
+    reverseGeo();  
+}
+
+window.onload = queryInitialMarkerLocation;
