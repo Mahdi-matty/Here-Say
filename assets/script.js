@@ -52,7 +52,7 @@ const options = {
     document.getElementById("lngbox").value = event.latLng.lng();
 });
 
-google.maps.event.addListener(marker, 'click', function (event) {
+google.maps.event.addListener(marker, 'dragend', function (event) {
     getLat = this.getPosition().lat();
     getLang = this.getPosition() .lng();
     // localStorage.setItem("getLat", getLat);
