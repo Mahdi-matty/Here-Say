@@ -80,8 +80,8 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
     }).then (function (data){
         console.log(data);
         cityLocal = data[0].country;
-        document.querySelector("#firstCrap").textContent= data[0].name;
-        document.querySelector("#secondCrap").textContent= cityLocal;
+        document.querySelector("#firstptag").textContent= data[0].name;
+        document.querySelector("#secondptag").textContent= cityLocal;
         return getCountry();
     })
     
@@ -103,20 +103,20 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
         return response.json();
     }).then(function(data){
         console.log(data);
-        document.querySelector("#thirdCrap").textContent= data[0].name;
-        document.querySelector("#fourthCrap").textContent=data[0].languages[0].name;
-        document.querySelector("#fifthCrap").textContent=data[0].capital;
-        document.querySelector("#sixthCrap").textContent=data[0].population;
+        document.querySelector("#thirdptag").textContent= data[0].name;
+        document.querySelector("#fourthptag").textContent=data[0].languages[0].name;
+        document.querySelector("#fifthptag").textContent=data[0].capital;
+        document.querySelector("#sixthptag").textContent=data[0].population;
         exTar = data[0].currencies[0].code;
         exchange();
-        document.querySelector("#seventhCrap").textContent=data[0].currencies[0].code;
+        document.querySelector("#seventhptag").textContent=data[0].currencies[0].code;
         targetLan = textContent=data[0].languages[0].iso639_1;
-        document.querySelector("#eighthCrap").textContent=data[0].languages[0].iso639_1;
+        document.querySelector("#eighthptag").textContent=data[0].languages[0].iso639_1;
     })
 }
 const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
 const translateParagraphs = async () => {
-  const inputTexttest = document.querySelector("#transSeacrh");
+  const inputTexttest = document.querySelector("#transSearch");
   const inputText = inputTexttest.value;
   const options = {
       method: 'POST',
@@ -170,7 +170,7 @@ async function exchange() {
         return response.json();
     }).then(function(data){
         console.log(data.data);
-        document.querySelector("#ninthCrap").textContent= data.data[exTar];
+        document.querySelector("#ninthptag").textContent= data.data[exTar];
     })
 }
 
