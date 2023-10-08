@@ -4,6 +4,7 @@
       <style>
         small {
           opacity: 0;
+          font-size: 50px;
         }
         .show-description small {
           opacity: 1;
@@ -23,9 +24,45 @@
         #popuSec {
           background-image: url("https://westfaironline.com/wp-content/uploads/2018/03/population_increase.jpg");
         }
+        #map_canvas {
+          border-left: 2px solid black;
+          border-right: 2px solid black;
+          border-bottom: 2px solid black;
+        }
+        .footerList {
+          background-color: rgb(0, 119, 255);
+          flex-wrap: wrap;
+          display: flex;
+          flex-direction: column;
+        }
+        .upperHand {
+          flex-wrap: wrap;
+          display: flex;
+        }
+        .githubForm {
+          flex-wrap: wrap;
+          /* display: flex; */
+          margin-right: 40px;
+        }
+        .contactForm {
+          margin-right: 40px;
+        }
+        #eighthptag {
+          display: none;
+        }
       </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
 <body>
+  <nav>
+    <div class="nav-wrapper #e3f2fd blue lighten-5">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#gitHubLink"><i class="material-icons">Github</i></a></li>
+        <li><a href="#contacUs"><i class="material-icons">Contact</i></a></li>
+        <li><a href="#apiListUse"><i class="material-icons">ApiLists</i></a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div id="map_canvas" style="width:100%; height:50%"></div>
 
@@ -38,33 +75,94 @@
     <section>
       <p><br /><small id="secondptag"></small></p>
     </section>
-    <section id="langSect">
-      <p>people speak : <br /><small id="fourthptag"></small></p>
-    </section>
-    <section>
-      <p >name of the country is : <br /><small id="thirdptag"></small></p>
-    </section>
-    <section id="capSec">
-      <p>the capital is : <br /><small id="fifthptag"></small></p>
-    </section>
-    <section id="popuSec">
-      <p>The population is : <br /><small id="sixthptag"></small></p>
-    </section>
-    <section id="currenSec">
-      <p>The currency is : <br /><small id="seventhptag"></small></p>
-    </section>
-    <section>
-      <p> The exchange rate to usd is : <br /><small id="ninthptag"></small></p>
-    </section>
+    <div class="card">
+      <div class="card-content">
+        <section id="langSect">
+          <p>people speak : <br /><small id="fourthptag"></small></p>
+        </section>
+      </div>
+    </div>
+      <div class="card">
+        <div class="card-content">
+          <section>
+            <p >name of the country is : <br /><small id="thirdptag"></small></p>
+          </section>
+        </div>
+      </div>
+        <div class="card">
+          <div class="card-content s6">
+            <section id="capSec">
+              <p>the capital is : <br /><small id="fifthptag"></small></p>
+            </section>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <section id="popuSec">
+              <p>The population is : <br /><small id="sixthptag"></small></p>
+            </section>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <section id="currenSec">
+              <p>The currency is : <br /><small id="seventhptag"></small></p>
+            </section>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <section>
+              <p> The exchange rate to usd is : <br /><small id="ninthptag"></small></p>
+            </section>
+          </div>
+        </div>
     <p id="eighthptag"></p>
   </div>
-  <div id="transDivi">
-    <input  type="text" placeholder="Search"  id="transSearch">
-    <button id="searchBtn">Translate</button>
+  <div class="card">
+    <div class="card-content">
+        <div id="transDivi">
+          <input  type="text" placeholder="Search"  id="transSearch">
+          <button id="searchBtn">Translate</button>
+        </div>
+        <div id="translationContainer">
+          <p id="translatedPop"></p>
+        </div>
+    </div>
   </div>
-  <div id="translationContainer">
-    <p id="translatedPop"></p>
-  </div>
+    <footer class="footerList">
+      <div>
+        <div class="upperHand">
+          <div class="githubForm">
+            <h5>Github</h5>
+            <ul id="gitHubLink">
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Mahdi-matty">Mahid-Mohammadi</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Nillows">Thomas-Wolin</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/manjotpadda13/">Manjot-Pada</a></li>
+            </ul>
+          </div>
+          <div class="contactForm">
+            <h5>Contact</h5>
+            <ul id="contactUs">
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Mahdi-matty">Mahid-Mohammadi</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Nillows">Thomas-Wolin</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/manjotpadda13/">Manjot-Pada</a></li>
+            </ul>
+          </div>
+          <div class="apiForm">
+            <h5>Api_List</h5>
+            <ul id="apiListUse">
+              <li><a class="grey-text text-lighten-3" href="https://api.apilayer.com">ApiLayer</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://google-translate1.p.rapidapi.com">Google-Translate</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://api.freecurrencyapi.com">CurrencyApi</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://api.openweathermap.org">OpenWeatherApi</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://maps.googleapis.com/maps/api">GoogleMapsApi</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://ip-geo-location4.p.rapidapi.com">Geo_LocationApi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
   <script src="./assets/script.js"></script>
   <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw-eYDjESg87GqCwHKYunuN8jONSNI3q4&callback=initMap">
