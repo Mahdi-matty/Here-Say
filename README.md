@@ -1,14 +1,16 @@
 # Here-say
-An application for finding information about your favuraite place
+An application for finding useful information about your current or favourite place on Earth
 
 ## Descriptioin
-Application consists on a google map with drager whcich can be pin to whatever location client want and then recive the info about the chosen location and translate any sentence between english and the other language
+Our application consists of an interactable google map interface, complete with draggable marker which has a default position based off of the accessing user's IP address. In addition, it can also be pinned to whichever location the user wants and then retrieve helpful information about that chosen location. Here-Say also has a simple translation tool to tell the user "what they say here"; and will translate any english text you enter into the local dialect and lexicon to show to a local of that country you need to communicate to if, for example, seeking help for emergencies.
 
-### usage
-it can be used for finding out some general info about the countries their capital, currency, population, languages spoken there and translate text
+### Usage
+Here-Say has a distillation of many useful facts and tools that anyone travelling in a foreign country could need or use. At it's surface level - for quick information it will tell you what your locations nearest city name is, the country name and the name of the capital city of that country. it also provides some basic demographic facts such as population number and name of language spoken. The tools we provide the user are a simple currency exchange ratio to convert to USD, and an "English to local language" translator.
 
-#### credits
-Manjot panda  Thomas wollin   Mahdi mohammadi    university of toronto bootcamp
+The main benefit of the tool is that the user does not need to know where they are in the world in order for the tool to work. If someone woke up in a foreign land and couldn't communnicate with anyone or read any of the signs because they are writtin in an unfamiliar alphabet; it would be very difficult when seeking help. Here-Say does all the work for the user in regards to localizing and compiling the information for the user to efficiently communicate if needed.
+
+#### Credits
+Manjot Panda  Thomas Wollin   Mahdi Mohammadi    university of toronto bootcamp
 
 ##### Address
 https://mahdi-matty.github.io/Here-Say/
