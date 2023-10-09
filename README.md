@@ -1,7 +1,7 @@
 # Here-say
 An application for finding useful information about your current or favourite place on Earth
 
-## Descriptioin
+## Description
 Our application consists of an interactable google map interface, complete with draggable marker which has a default position based off of the accessing user's IP address. In addition, it can also be pinned to whichever location the user wants and then retrieve helpful information about that chosen location. Here-Say also has a simple translation tool to tell the user "what they say here"; and will translate any english text you enter into the local dialect and lexicon to show to a local of that country you need to communicate to if, for example, seeking help for emergencies.
 
 ### Usage
