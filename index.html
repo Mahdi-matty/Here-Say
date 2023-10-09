@@ -1,64 +1,15 @@
-<html>
+ <html>
     <head>
         <title>Here-say</title>
-      <style>
-        small {
-          opacity: 0;
-          font-size: 50px;
-        }
-        .show-description small {
-          opacity: 1;
-        }
-        .show-description p{
-           height: 150px;
-        }
-        #langSect {
-          background-image: url("https://mycroft.ai/wp-content/uploads/2018/05/languages-edited.png");
-        }
-        #currenSec {
-          background-image: url("https://th.bing.com/th/id/R.22cb5cffc4077bfd955579d48da683d3?rik=polQqMNQks%2fXFw&riu=http%3a%2f%2fwww.gannett-cdn.com%2f-mm-%2fa835c2016b6b87b2f5e8ff8ba97ec05fba23f7e6%2fc%3d0-211-2125-1411%26r%3dx633%26c%3d1200x630%2flocal%2f-%2fmedia%2f2016%2f08%2f02%2fUSATODAY%2fUSATODAY%2f636057628882893315-ThinkstockPhotos-491790039.jpg&ehk=4MruO7KbCS0VtxSA2Jix5XwB5oYYJyDjlik3DEK%2bQ0o%3d&risl=&pid=ImgRaw&r=0");
-        }
-        #capSec {
-          background-image: url("https://fcmenterprises.org/americantribute/wp-content/uploads/2017/01/American_Tribute_Washington_Dc.jpg");
-        }
-        #popuSec {
-          background-image: url("https://westfaironline.com/wp-content/uploads/2018/03/population_increase.jpg");
-        }
-        #map_canvas {
-          border-left: 2px solid black;
-          border-right: 2px solid black;
-          border-bottom: 2px solid black;
-        }
-        .footerList {
-          background-color: rgb(0, 119, 255);
-          flex-wrap: wrap;
-          display: flex;
-          flex-direction: column;
-        }
-        .upperHand {
-          flex-wrap: wrap;
-          display: flex;
-        }
-        .githubForm {
-          flex-wrap: wrap;
-          /* display: flex; */
-          margin-right: 40px;
-        }
-        .contactForm {
-          margin-right: 40px;
-        }
-        #eighthptag {
-          display: none;
-        }
-      </style>
+        <link rel="stylesheet" href="/assets/styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
 <body>
   <nav>
-    <div class="nav-wrapper #e3f2fd blue lighten-5">
+    <div class="nav-wrapper #1b5e20 green darken-4">
       <ul class="right hide-on-med-and-down">
         <li><a href="#gitHubLink"><i class="material-icons">Github</i></a></li>
-        <li><a href="#contacUs"><i class="material-icons">Contact</i></a></li>
+        <li><a href="#contactUs"><i class="material-icons">Contact</i></a></li>
         <li><a href="#apiListUse"><i class="material-icons">ApiLists</i></a></li>
       </ul>
     </div>
@@ -70,56 +21,56 @@
     <p> Latitude: <input size="20" type="text" id="latbox" name="lat" ></p>
     <p>Longitude: <input size="20" type="text" id="lngbox" name="lng" ></p>
   </div>
-  <div>
+  <div class="cards-container">
     <p id="firstptag"></p>
     <section>
       <p><br /><small id="secondptag"></small></p>
     </section>
-    <div class="card">
+    <div class="card blue-grey darken-1">
       <div class="card-content">
         <section id="langSect">
-          <p>people speak : <br /><small id="fourthptag"></small></p>
+          <p>The people here most frequently speak : <br /><small id="fourthptag"></small></p>
         </section>
       </div>
     </div>
-      <div class="card">
+      <div class="card blue-grey darken-1">
         <div class="card-content">
           <section>
-            <p >name of the country is : <br /><small id="thirdptag"></small></p>
+            <p >The name of the country is : <br /><small id="thirdptag"></small></p>
           </section>
         </div>
       </div>
-        <div class="card">
+        <div class="card blue-grey darken-1">
           <div class="card-content s6">
             <section id="capSec">
-              <p>the capital is : <br /><small id="fifthptag"></small></p>
+              <p>The capital city is : <br /><small id="fifthptag"></small></p>
             </section>
           </div>
         </div>
-        <div class="card">
+        <div class="card blue-grey darken-1">
           <div class="card-content">
             <section id="popuSec">
               <p>The population is : <br /><small id="sixthptag"></small></p>
             </section>
           </div>
         </div>
-        <div class="card">
+        <div class="card blue-grey darken-1">
           <div class="card-content">
             <section id="currenSec">
               <p>The currency is : <br /><small id="seventhptag"></small></p>
             </section>
           </div>
         </div>
-        <div class="card">
+        <div class="card blue-grey darken-1">
           <div class="card-content">
             <section>
-              <p> The exchange rate to usd is : <br /><small id="ninthptag"></small></p>
+              <p> The exchange rate to USD is : <br /><small id="ninthptag"></small></p>
             </section>
           </div>
         </div>
     <p id="eighthptag"></p>
   </div>
-  <div class="card">
+  <div class="card blue-grey darken-1">
     <div class="card-content">
         <div id="transDivi">
           <input  type="text" placeholder="Search"  id="transSearch">
@@ -163,9 +114,14 @@
         </div>
       </div>
 </footer>
-  <script src="./assets/script.js"></script>
+  <script async src="./assets/script.js"></script>
   <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw-eYDjESg87GqCwHKYunuN8jONSNI3q4&callback=initMap">
   </script>
 </body>
-</html>
+</html> 
+
+
+
+
+
