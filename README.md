@@ -10,7 +10,11 @@ Here-Say has a distillation of many useful facts and tools that anyone travellin
 The main benefit of the tool is that the user does not need to know where they are in the world in order for the tool to work. If someone woke up in a foreign land and couldn't communnicate with anyone or read any of the signs because they are writtin in an unfamiliar alphabet; it would be very difficult when seeking help. Here-Say does all the work for the user in regards to localizing and compiling the information for the user to efficiently communicate if needed.
 
 #### Credits
-Manjot Panda  Thomas Wollin   Mahdi Mohammadi    university of toronto bootcamp
+Mahdi Mohammadi
+Thomas Wollin  
+Manjot Padda
+
+University of Toronto Bootcamp
 
 ##### Address
 https://mahdi-matty.github.io/Here-Say/
