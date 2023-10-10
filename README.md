@@ -16,4 +16,4 @@ Manjot Panda  Thomas Wollin   Mahdi Mohammadi    university of toronto bootcamp
 https://mahdi-matty.github.io/Here-Say/
 
 ##### Image
-https://github.com/Mahdi-matty/Here-Say/assets/142257232/69de9a59-299c-4531-aeb0-e2c79eae874e
+![Screenshot](https://github.com/Mahdi-matty/Here-Say/assets/133193557/ab600046-77d9-450d-bd47-533fef83ba83)
