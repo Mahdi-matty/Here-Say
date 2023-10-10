@@ -59,12 +59,12 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
     // localStorage.setItem("getLang", getLang);
     document.getElementById("latbox").value = this.getPosition().lat();
     document.getElementById("lngbox").value = this.getPosition().lng();
-    localStorage.setItem("longit", document.getElementById("lngbox").value)
+    //localStorage.setItem("longit", document.getElementById("lngbox").value)
     // locationFind.setItem("latitude");
     return reverseGeo();
     
 });
-//  reverseGeo();
+
   
   }
   let cityLocal;
@@ -80,8 +80,8 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
     }).then (function (data){
         console.log(data);
         cityLocal = data[0].country;
-        document.querySelector("#firstCrap").textContent= data[0].name;
-        document.querySelector("#secondCrap").textContent= cityLocal;
+        document.querySelector("#firstptag").textContent= data[0].name;
+        document.querySelector("#secondptag").textContent= cityLocal;
         return getCountry();
     })
     
@@ -103,20 +103,20 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
         return response.json();
     }).then(function(data){
         console.log(data);
-        document.querySelector("#thirdCrap").textContent= data[0].name;
-        document.querySelector("#fourthCrap").textContent=data[0].languages[0].name;
-        document.querySelector("#fifthCrap").textContent=data[0].capital;
-        document.querySelector("#sixthCrap").textContent=data[0].population;
+        document.querySelector("#thirdptag").textContent= data[0].name;
+        document.querySelector("#fourthptag").textContent=data[0].languages[0].name;
+        document.querySelector("#fifthptag").textContent=data[0].capital;
+        document.querySelector("#sixthptag").textContent=data[0].population;
         exTar = data[0].currencies[0].code;
         exchange();
-        document.querySelector("#seventhCrap").textContent=data[0].currencies[0].code;
+        document.querySelector("#seventhptag").textContent=data[0].currencies[0].code;
         targetLan = textContent=data[0].languages[0].iso639_1;
-        document.querySelector("#eighthCrap").textContent=data[0].languages[0].iso639_1;
+        document.querySelector("#eighthptag").textContent=data[0].languages[0].iso639_1;
     })
 }
 const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
 const translateParagraphs = async () => {
-  const inputTexttest = document.querySelector("#transSeacrh");
+  const inputTexttest = document.querySelector("#transSearch");
   const inputText = inputTexttest.value;
   const options = {
       method: 'POST',
@@ -164,12 +164,34 @@ document.querySelectorAll("section").forEach(section => {
 });
 
 
-function exchange() {
+async function exchange() {
     fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_NKtmTMsXpVnAOBStOLKV1mGWodW5Of23cls4PwcD`)
     .then(function(response){
         return response.json();
     }).then(function(data){
         console.log(data.data);
-        document.querySelector("#ninthCrap").textContent= data.data[exTar];
+        document.querySelector("#ninthptag").textContent= data.data[exTar];
     })
 }
+
+
+async function queryInitialMarkerLocation() {
+    let location;
+    try {
+        location = await getLocation();
+    } catch (error) {
+        console.error("Error getting location:", error);
+        // Defaults to New York City if there's an error
+        location = { Lat: 40.713955826286025, Lng: -74.00390625 };
+    }
+    
+  
+    const myLatlng = new google.maps.LatLng(location.Lat, location.Lng);
+    
+    getLat = myLatlng.lat();
+    getLang = myLatlng.lng();
+    
+    reverseGeo();  
+}
+
+window.onload = queryInitialMarkerLocation;
